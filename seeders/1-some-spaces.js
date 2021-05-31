@@ -9,6 +9,8 @@ module.exports = {
           title: "George's Work list",
           description: "This is the first space",
           userId: 1,
+          backgroundColor: "#f8ff00",
+          color: "#ff0080",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
