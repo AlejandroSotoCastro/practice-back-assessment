@@ -8,7 +8,7 @@ async function meExample() {
     // if you havent follow the setup steps from the readme first
     const responseLogin = await axios.post(`http://localhost:${PORT}/login`, {
       email: "test@test.com",
-      password: "test1234"
+      password: "test1234",
     });
     console.log("RESPONSE FROM SERVER", responseLogin.data);
 
@@ -17,16 +17,17 @@ async function meExample() {
     // 2. now we can use the token in the /me endpoint to get
     // the email & name of this user
     const response = await axios.post(
-      `http://localhost:${PORT}/authorized_post_request`,
+      `http://localhost:${PORT}/2/stories`,
       {
         // this is our request body
-        title: "My new thing",
-        moreData: "I like turtles"
+        name: "My new thing",
+        imageUrl: "http:www.rando,image.com",
+        content: "Everthing is content",
       },
       {
         headers: {
-          Authorization: `Bearer ${token}`
-        }
+          Authorization: `Bearer ${token}`,
+        },
       }
     );
 
